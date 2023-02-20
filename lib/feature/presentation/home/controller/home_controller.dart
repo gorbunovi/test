@@ -7,28 +7,31 @@ import 'index.dart';
 class HomeController extends Cubit<HomeState> {
   HomeController() : super(const Initial());
 
+  String url = 'https://ya.ru/';
+  late final WebViewController controller;
+
   Future<void> init() async{
-    final WebViewController controller = WebViewController()
-      ..setJavaScriptMode(JavaScriptMode.unrestricted)
-      ..setNavigationDelegate(
-        NavigationDelegate(
-            onProgress: (int progress) {
-            // Update loading bar.
-            },
-          onPageStarted: (String url) {},
-          onPageFinished: (String url) {},
-          onWebResourceError: (WebResourceError error) {},
-          onNavigationRequest: (NavigationRequest request) {
-            if (request.url.startsWith('https://www.google.ru/')) {
-             return NavigationDecision.prevent;
-            }
-            return NavigationDecision.navigate;
-          },
-        ),
-      )
-    ..loadRequest(Uri.parse('https://ya.ru/'));
+    controller = WebViewController()
+    ..setJavaScriptMode(JavaScriptMode.unrestricted)
+    ..loadRequest(Uri.parse(url));
     final currentState = state;
     emit(const Loading());
-        emit(Page(controller: controller));
+    emit(Page(controller: controller));
+  }
+
+  Future<void> bac() async{
+    if(await controller.canGoBack()){
+      emit(const Loading());
+      controller.goBack();
+      emit(Page(controller: controller));
+    }else return;
+  }
+
+    Future<void> forward() async{
+    if(await controller.canGoForward()){
+      emit(const Loading());
+      controller.goForward();
+      emit(Page(controller: controller));
+    }else return;
   }
 }
