@@ -39,6 +39,8 @@ dev_dependencies:
   json_serializable: ^6.5.4
   # code generators
   build_runner: ^2.3.2
+  # Functional programming thingies
+  dartz: ^0.10.1
 
 
   flutter_lints: ^2.0.0
