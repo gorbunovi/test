@@ -1,4 +1,7 @@
 
+import 'dart:convert';
+
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import '../../../domain/usecases/get_url.dart';
@@ -32,6 +35,18 @@ class HomeController extends Cubit<HomeState> {
     ..loadRequest(Uri.parse(_url));
 
     emit(Page(controller: controller));
+  }
+
+
+  void loadLocalHTML() async {
+    final html = await rootBundle.loadString('assets/index.html');
+    final url = Uri.dataFromString(
+      html,
+      mimeType: 'text/html',
+      encoding: Encoding.getByName('utf-8'),
+    ).toString();
+
+    controller.loadUrl(url);
   }
 
   Future<void> bac() async{

@@ -21,6 +21,6 @@ class UrlRemoteDataSourceImpl implements CatalogRemoteDataSource {
 
   @override
   Future<String> getUrl() async{
-    return 'https://ya.ru/';
+    return 'https://getfitshape.com/en/coaches/13';
   }
 }
