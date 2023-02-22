@@ -13,6 +13,8 @@ abstract class HomeState with _$HomeState {
 
   const factory HomeState.page({required WebViewController controller}) = Page;
 
+  const factory HomeState.local({required String url}) = Local;
+
   const factory HomeState.empty() = Empty;
 
   const factory HomeState.error(Failure failure) = Error;

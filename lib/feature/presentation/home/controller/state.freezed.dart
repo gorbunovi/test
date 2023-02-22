@@ -21,6 +21,7 @@ mixin _$HomeState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(WebViewController controller) page,
+    required TResult Function(String url) local,
     required TResult Function() empty,
     required TResult Function(Failure failure) error,
   }) =>
@@ -30,6 +31,7 @@ mixin _$HomeState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(WebViewController controller)? page,
+    TResult? Function(String url)? local,
     TResult? Function()? empty,
     TResult? Function(Failure failure)? error,
   }) =>
@@ -39,6 +41,7 @@ mixin _$HomeState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(WebViewController controller)? page,
+    TResult Function(String url)? local,
     TResult Function()? empty,
     TResult Function(Failure failure)? error,
     required TResult orElse(),
@@ -49,6 +52,7 @@ mixin _$HomeState {
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(Page value) page,
+    required TResult Function(Local value) local,
     required TResult Function(Empty value) empty,
     required TResult Function(Error value) error,
   }) =>
@@ -58,6 +62,7 @@ mixin _$HomeState {
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
     TResult? Function(Page value)? page,
+    TResult? Function(Local value)? local,
     TResult? Function(Empty value)? empty,
     TResult? Function(Error value)? error,
   }) =>
@@ -67,6 +72,7 @@ mixin _$HomeState {
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(Page value)? page,
+    TResult Function(Local value)? local,
     TResult Function(Empty value)? empty,
     TResult Function(Error value)? error,
     required TResult orElse(),
@@ -130,6 +136,7 @@ class _$Initial implements Initial {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(WebViewController controller) page,
+    required TResult Function(String url) local,
     required TResult Function() empty,
     required TResult Function(Failure failure) error,
   }) {
@@ -142,6 +149,7 @@ class _$Initial implements Initial {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(WebViewController controller)? page,
+    TResult? Function(String url)? local,
     TResult? Function()? empty,
     TResult? Function(Failure failure)? error,
   }) {
@@ -154,6 +162,7 @@ class _$Initial implements Initial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(WebViewController controller)? page,
+    TResult Function(String url)? local,
     TResult Function()? empty,
     TResult Function(Failure failure)? error,
     required TResult orElse(),
@@ -170,6 +179,7 @@ class _$Initial implements Initial {
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(Page value) page,
+    required TResult Function(Local value) local,
     required TResult Function(Empty value) empty,
     required TResult Function(Error value) error,
   }) {
@@ -182,6 +192,7 @@ class _$Initial implements Initial {
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
     TResult? Function(Page value)? page,
+    TResult? Function(Local value)? local,
     TResult? Function(Empty value)? empty,
     TResult? Function(Error value)? error,
   }) {
@@ -194,6 +205,7 @@ class _$Initial implements Initial {
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(Page value)? page,
+    TResult Function(Local value)? local,
     TResult Function(Empty value)? empty,
     TResult Function(Error value)? error,
     required TResult orElse(),
@@ -248,6 +260,7 @@ class _$Loading implements Loading {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(WebViewController controller) page,
+    required TResult Function(String url) local,
     required TResult Function() empty,
     required TResult Function(Failure failure) error,
   }) {
@@ -260,6 +273,7 @@ class _$Loading implements Loading {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(WebViewController controller)? page,
+    TResult? Function(String url)? local,
     TResult? Function()? empty,
     TResult? Function(Failure failure)? error,
   }) {
@@ -272,6 +286,7 @@ class _$Loading implements Loading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(WebViewController controller)? page,
+    TResult Function(String url)? local,
     TResult Function()? empty,
     TResult Function(Failure failure)? error,
     required TResult orElse(),
@@ -288,6 +303,7 @@ class _$Loading implements Loading {
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(Page value) page,
+    required TResult Function(Local value) local,
     required TResult Function(Empty value) empty,
     required TResult Function(Error value) error,
   }) {
@@ -300,6 +316,7 @@ class _$Loading implements Loading {
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
     TResult? Function(Page value)? page,
+    TResult? Function(Local value)? local,
     TResult? Function(Empty value)? empty,
     TResult? Function(Error value)? error,
   }) {
@@ -312,6 +329,7 @@ class _$Loading implements Loading {
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(Page value)? page,
+    TResult Function(Local value)? local,
     TResult Function(Empty value)? empty,
     TResult Function(Error value)? error,
     required TResult orElse(),
@@ -392,6 +410,7 @@ class _$Page implements Page {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(WebViewController controller) page,
+    required TResult Function(String url) local,
     required TResult Function() empty,
     required TResult Function(Failure failure) error,
   }) {
@@ -404,6 +423,7 @@ class _$Page implements Page {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(WebViewController controller)? page,
+    TResult? Function(String url)? local,
     TResult? Function()? empty,
     TResult? Function(Failure failure)? error,
   }) {
@@ -416,6 +436,7 @@ class _$Page implements Page {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(WebViewController controller)? page,
+    TResult Function(String url)? local,
     TResult Function()? empty,
     TResult Function(Failure failure)? error,
     required TResult orElse(),
@@ -432,6 +453,7 @@ class _$Page implements Page {
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(Page value) page,
+    required TResult Function(Local value) local,
     required TResult Function(Empty value) empty,
     required TResult Function(Error value) error,
   }) {
@@ -444,6 +466,7 @@ class _$Page implements Page {
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
     TResult? Function(Page value)? page,
+    TResult? Function(Local value)? local,
     TResult? Function(Empty value)? empty,
     TResult? Function(Error value)? error,
   }) {
@@ -456,6 +479,7 @@ class _$Page implements Page {
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(Page value)? page,
+    TResult Function(Local value)? local,
     TResult Function(Empty value)? empty,
     TResult Function(Error value)? error,
     required TResult orElse(),
@@ -473,6 +497,159 @@ abstract class Page implements HomeState {
   WebViewController get controller;
   @JsonKey(ignore: true)
   _$$PageCopyWith<_$Page> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$LocalCopyWith<$Res> {
+  factory _$$LocalCopyWith(_$Local value, $Res Function(_$Local) then) =
+      __$$LocalCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String url});
+}
+
+/// @nodoc
+class __$$LocalCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res, _$Local>
+    implements _$$LocalCopyWith<$Res> {
+  __$$LocalCopyWithImpl(_$Local _value, $Res Function(_$Local) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? url = null,
+  }) {
+    return _then(_$Local(
+      url: null == url
+          ? _value.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$Local implements Local {
+  const _$Local({required this.url});
+
+  @override
+  final String url;
+
+  @override
+  String toString() {
+    return 'HomeState.local(url: $url)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$Local &&
+            (identical(other.url, url) || other.url == url));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, url);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LocalCopyWith<_$Local> get copyWith =>
+      __$$LocalCopyWithImpl<_$Local>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(WebViewController controller) page,
+    required TResult Function(String url) local,
+    required TResult Function() empty,
+    required TResult Function(Failure failure) error,
+  }) {
+    return local(url);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(WebViewController controller)? page,
+    TResult? Function(String url)? local,
+    TResult? Function()? empty,
+    TResult? Function(Failure failure)? error,
+  }) {
+    return local?.call(url);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(WebViewController controller)? page,
+    TResult Function(String url)? local,
+    TResult Function()? empty,
+    TResult Function(Failure failure)? error,
+    required TResult orElse(),
+  }) {
+    if (local != null) {
+      return local(url);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Initial value) initial,
+    required TResult Function(Loading value) loading,
+    required TResult Function(Page value) page,
+    required TResult Function(Local value) local,
+    required TResult Function(Empty value) empty,
+    required TResult Function(Error value) error,
+  }) {
+    return local(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Initial value)? initial,
+    TResult? Function(Loading value)? loading,
+    TResult? Function(Page value)? page,
+    TResult? Function(Local value)? local,
+    TResult? Function(Empty value)? empty,
+    TResult? Function(Error value)? error,
+  }) {
+    return local?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(Loading value)? loading,
+    TResult Function(Page value)? page,
+    TResult Function(Local value)? local,
+    TResult Function(Empty value)? empty,
+    TResult Function(Error value)? error,
+    required TResult orElse(),
+  }) {
+    if (local != null) {
+      return local(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class Local implements HomeState {
+  const factory Local({required final String url}) = _$Local;
+
+  String get url;
+  @JsonKey(ignore: true)
+  _$$LocalCopyWith<_$Local> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -513,6 +690,7 @@ class _$Empty implements Empty {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(WebViewController controller) page,
+    required TResult Function(String url) local,
     required TResult Function() empty,
     required TResult Function(Failure failure) error,
   }) {
@@ -525,6 +703,7 @@ class _$Empty implements Empty {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(WebViewController controller)? page,
+    TResult? Function(String url)? local,
     TResult? Function()? empty,
     TResult? Function(Failure failure)? error,
   }) {
@@ -537,6 +716,7 @@ class _$Empty implements Empty {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(WebViewController controller)? page,
+    TResult Function(String url)? local,
     TResult Function()? empty,
     TResult Function(Failure failure)? error,
     required TResult orElse(),
@@ -553,6 +733,7 @@ class _$Empty implements Empty {
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(Page value) page,
+    required TResult Function(Local value) local,
     required TResult Function(Empty value) empty,
     required TResult Function(Error value) error,
   }) {
@@ -565,6 +746,7 @@ class _$Empty implements Empty {
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
     TResult? Function(Page value)? page,
+    TResult? Function(Local value)? local,
     TResult? Function(Empty value)? empty,
     TResult? Function(Error value)? error,
   }) {
@@ -577,6 +759,7 @@ class _$Empty implements Empty {
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(Page value)? page,
+    TResult Function(Local value)? local,
     TResult Function(Empty value)? empty,
     TResult Function(Error value)? error,
     required TResult orElse(),
@@ -656,6 +839,7 @@ class _$Error implements Error {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(WebViewController controller) page,
+    required TResult Function(String url) local,
     required TResult Function() empty,
     required TResult Function(Failure failure) error,
   }) {
@@ -668,6 +852,7 @@ class _$Error implements Error {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(WebViewController controller)? page,
+    TResult? Function(String url)? local,
     TResult? Function()? empty,
     TResult? Function(Failure failure)? error,
   }) {
@@ -680,6 +865,7 @@ class _$Error implements Error {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(WebViewController controller)? page,
+    TResult Function(String url)? local,
     TResult Function()? empty,
     TResult Function(Failure failure)? error,
     required TResult orElse(),
@@ -696,6 +882,7 @@ class _$Error implements Error {
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(Page value) page,
+    required TResult Function(Local value) local,
     required TResult Function(Empty value) empty,
     required TResult Function(Error value) error,
   }) {
@@ -708,6 +895,7 @@ class _$Error implements Error {
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
     TResult? Function(Page value)? page,
+    TResult? Function(Local value)? local,
     TResult? Function(Empty value)? empty,
     TResult? Function(Error value)? error,
   }) {
@@ -720,6 +908,7 @@ class _$Error implements Error {
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(Page value)? page,
+    TResult Function(Local value)? local,
     TResult Function(Empty value)? empty,
     TResult Function(Error value)? error,
     required TResult orElse(),

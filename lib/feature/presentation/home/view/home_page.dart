@@ -5,6 +5,7 @@ import 'package:test_work/core/core.dart' as core_widgets;
 import 'package:test_work/core/error/failure.dart';
 import 'package:test_work/feature/presentation/home/widgets/home_widget.dart';
 import 'package:test_work/feature/presentation/home/widgets/index_home_widget.dart';
+import 'package:test_work/feature/presentation/home/widgets/local_widget.dart';
 import 'package:test_work/servise_locator.dart';
 
 import '../controller/index.dart';
@@ -21,6 +22,11 @@ class HomePage extends StatelessWidget {
                 controller: controller,
                 back: () async => BlocProvider.of<HomeController>(context).bac(),
                 forward: () async => BlocProvider.of<HomeController>(context).forward(),
+              ),
+              local: (url) => LocalWidget(
+                  url: url,
+                  back: () async => BlocProvider.of<HomeController>(context).bac(),
+                  forward: () async => BlocProvider.of<HomeController>(context).bac(),
               ),
               loading: () => const core_widgets.LoadWidget(),
               empty: () => const core_widgets.LoadWidget(),

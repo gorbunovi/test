@@ -38,7 +38,7 @@ class HomeController extends Cubit<HomeState> {
   }
 
 
-  void loadLocalHTML() async {
+  Future<void> loadLocalHTML() async {
     final html = await rootBundle.loadString('assets/index.html');
     final url = Uri.dataFromString(
       html,
@@ -46,7 +46,7 @@ class HomeController extends Cubit<HomeState> {
       encoding: Encoding.getByName('utf-8'),
     ).toString();
 
-    controller.loadUrl(url);
+    emit(Local(url: url));
   }
 
   Future<void> bac() async{
