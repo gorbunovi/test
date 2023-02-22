@@ -8,7 +8,7 @@ class LocalWidget extends StatelessWidget {
     required this.forward,
   }) : super(key: key);
 
-  late final WebViewPlusController _controller;
+  // late final WebViewPlusController _controller;
   final String url;
   final Function back;
   final Function forward;
@@ -32,7 +32,7 @@ class LocalWidget extends StatelessWidget {
       ),
       body:WebViewPlus(
         onWebViewCreated: (controller) {
-          this._controller = controller;
+          // this._controller = controller;
           controller.loadUrl(url);
         },
       ),
