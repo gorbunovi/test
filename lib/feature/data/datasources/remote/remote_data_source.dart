@@ -3,6 +3,7 @@ import 'dart:convert';
 
 
 
+import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:http/http.dart' as http;
 
 import 'package:flutter/services.dart' show rootBundle;
@@ -22,8 +23,10 @@ class UrlRemoteDataSourceImpl implements UrlRemoteDataSource {
 
   @override
   Future<String> getUrl() async{
-
-    return 'https://getfitshape.com/en/coaches/13';
+    final RemoteConfig remoteConfig = RemoteConfig.instance;
+    await remoteConfig.fetch();
+    await remoteConfig.activate();
+    return remoteConfig.getString('url');   //'https://getfitshape.com/en/coaches/13';
   }
 
 
