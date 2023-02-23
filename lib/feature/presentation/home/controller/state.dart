@@ -7,13 +7,16 @@ part 'state.freezed.dart';
 
 @freezed
 abstract class HomeState with _$HomeState {
+
   const factory HomeState.initial() = Initial;
 
   const factory HomeState.loading() = Loading;
 
-  const factory HomeState.page({required WebViewController controller}) = Page;
+  const factory HomeState.page({required WebViewController webViewController}) = Page;
 
-  const factory HomeState.local({required String url}) = Local;
+  const factory HomeState.preview() = Preview;
+
+  const factory HomeState.internetError() = Internet;
 
   const factory HomeState.empty() = Empty;
 

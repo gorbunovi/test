@@ -11,7 +11,7 @@ class HomeController extends Cubit<HomeState> {
   HomeController({required this.getUrl}) : super(const Initial());
   final GetUrl getUrl;
   late String _url;
-  late final WebViewController controller;
+  late final WebViewController webcontroller;
 
   Future<void> init() async{
     final currentState = state;
@@ -30,38 +30,20 @@ class HomeController extends Cubit<HomeState> {
       },
     );
 
-    controller = WebViewController()
-    ..setJavaScriptMode(JavaScriptMode.unrestricted)
-    ..loadRequest(Uri.parse(_url));
+    if (_url == 'no internet'){
+      emit(const Internet());
+    }else{
+      webcontroller = WebViewController()
+        ..setJavaScriptMode(JavaScriptMode.unrestricted)
+        ..loadRequest(Uri.parse(_url));
+      emit(Page(webViewController: webcontroller));
+    }
 
-    emit(Page(controller: controller));
+
   }
 
 
-  Future<void> loadLocalHTML() async {
-    final html = await rootBundle.loadString('assets/index.html');
-    final url = Uri.dataFromString(
-      html,
-      mimeType: 'text/html',
-      encoding: Encoding.getByName('utf-8'),
-    ).toString();
 
-    emit(Local(url: url));
-  }
 
-  Future<void> bac() async{
-    if(await controller.canGoBack()){
-      emit(const Loading());
-      controller.goBack();
-      emit(Page(controller: controller));
-    }else return;
-  }
 
-    Future<void> forward() async{
-    if(await controller.canGoForward()){
-      emit(const Loading());
-      controller.goForward();
-      emit(Page(controller: controller));
-    }else return;
-  }
 }

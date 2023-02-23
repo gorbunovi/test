@@ -5,16 +5,7 @@ class LoadWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: const BoxDecoration(
-        image: DecorationImage(
-          fit: BoxFit.cover,
-          image: AssetImage(
-            'assets/images/background/back_home.png',
-          ),
-        ),
-      ),
-      child: Scaffold(
+    return Scaffold(
         backgroundColor: Colors.transparent,
         appBar: PreferredSize(
           preferredSize: const Size.fromHeight(50),
@@ -26,18 +17,7 @@ class LoadWidget extends StatelessWidget {
                 ),
               ),
               centerTitle: true,
-              flexibleSpace: Container(
-                decoration: const BoxDecoration(
-                    image: DecorationImage(
-                        image: AssetImage(
-                            'assets/images/background/bac_app_bar.png'),
-                        fit: BoxFit.fill)),
-                child: Column(
-                  children: const [
-                    // SizedBox(height: 30),
-                  ],
-                ),
-              )),
+          ),
         ),
         body:  const SafeArea(
           child: Center(
@@ -46,20 +26,9 @@ class LoadWidget extends StatelessWidget {
             ),
           ),
         ),
-        bottomNavigationBar: BottomAppBar(
-          shape: const CircularNotchedRectangle(),
-          child: Container(
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage('assets/images/background/bac_app_bar.png'),
-                  fit: BoxFit.fill),
-            ),
-            child: SizedBox(
-              height: MediaQuery.of(context).size.height * 0.07,
-            ),
-          ),
+        bottomNavigationBar: const BottomAppBar(
+          shape: CircularNotchedRectangle(),
         ),
-      ),
     );
   }
 }

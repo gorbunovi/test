@@ -9,28 +9,39 @@ import 'package:test_work/feature/domain/repositories/catalog_repository.dart';
 
 class UrlRepositoryImpl implements UrlRepository {
   UrlRepositoryImpl({
-    required this.catalogLocalDataSorce,
-    required this.catalogRemoteDataSource,
+    required this.urlLocalDataSorce,
+    required this.urlRemoteDataSource,
     required this.networkInfo,
   });
 
-  final CatalogLocalDataSorce catalogLocalDataSorce;
-  final CatalogRemoteDataSource catalogRemoteDataSource;
+  final UrlLocalDataSource urlLocalDataSorce;
+  final UrlRemoteDataSource urlRemoteDataSource;
   final NetworkInfo networkInfo;
+
+  // подключение фаербэйс и получение ссылки
+//сохранение ссылки
 
   @override
   Future<Either<Failure, String>> getUrl() async {
+    String url;
+
     if(await networkInfo.isConnected) {
       try {
-        final url = await catalogRemoteDataSource.getUrl();
+        if(await urlLocalDataSorce.containsKey('url')){
+          url= await urlLocalDataSorce.getUrlFromCache();
+          print('local data source');
+        }else{
+          url = await urlRemoteDataSource.getUrl();
+          await urlLocalDataSorce.urlToCache(url);
+          print('remove data source');
+        }
         return Right(url);
       } on CacheException {
         return Left(CacheFailure(''));
       }
     }else{
       try {
-        final url= await catalogLocalDataSorce.getUrlLocal();
-        return Right(url);
+        return const Right('no internet');
       } on CacheException {
         return Left(CacheFailure(''));
       }

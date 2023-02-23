@@ -5,7 +5,7 @@ import 'package:test_work/core/core.dart' as core_widgets;
 import 'package:test_work/core/error/failure.dart';
 import 'package:test_work/feature/presentation/home/widgets/home_widget.dart';
 import 'package:test_work/feature/presentation/home/widgets/index_home_widget.dart';
-import 'package:test_work/feature/presentation/home/widgets/local_widget.dart';
+import 'package:test_work/feature/presentation/home/widgets/no_internet_widget.dart';
 import 'package:test_work/servise_locator.dart';
 
 import '../controller/index.dart';
@@ -18,16 +18,11 @@ class HomePage extends StatelessWidget {
         builder: (context, state) {
           return state.when(
               initial: () => const IndexHomeWidget(),
-              page: (controller) => HomeWidget(
-                controller: controller,
-                back: () async => BlocProvider.of<HomeController>(context).bac(),
-                forward: () async => BlocProvider.of<HomeController>(context).forward(),
+              page: (webController) => HomeWidget(
+                controller: webController,
               ),
-              local: (url) => LocalWidget(
-                  url: url,
-                  back: () async => BlocProvider.of<HomeController>(context).bac(),
-                  forward: () async => BlocProvider.of<HomeController>(context).bac(),
-              ),
+              internetError: () => const NoInternetWidget(),
+              preview: () => const IndexHomeWidget(),
               loading: () => const core_widgets.LoadWidget(),
               empty: () => const core_widgets.LoadWidget(),
               error: (failure) => core_widgets.ErrorWidget(failure.message)

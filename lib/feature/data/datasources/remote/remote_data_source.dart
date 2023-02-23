@@ -6,14 +6,14 @@ import 'package:http/http.dart' as http;
 
 import 'package:flutter/services.dart' show rootBundle;
 
-abstract class CatalogRemoteDataSource {
+abstract class UrlRemoteDataSource {
   /// Calls the https://rickandmortyapi.com/api/character/?page=1 endpoint.
   ///
   /// Throws a [ServerException] for all error codes.
   Future<String> getUrl();
 }
 
-class UrlRemoteDataSourceImpl implements CatalogRemoteDataSource {
+class UrlRemoteDataSourceImpl implements UrlRemoteDataSource {
   http.Client client;
 
   UrlRemoteDataSourceImpl({required this.client});

@@ -1,18 +1,33 @@
-import 'dart:convert';
+import 'package:shared_preferences/shared_preferences.dart';
 
-import 'package:flutter/services.dart' show rootBundle;
+abstract class UrlLocalDataSource {
 
-
-abstract class CatalogLocalDataSorce{
-  Future<String> getUrlLocal();
+  Future<String> getUrlFromCache();
+  Future<void> urlToCache(String url);
+  Future<bool> containsKey(String key);
 }
 
 
-class UrlLocalDataSorceImpl implements CatalogLocalDataSorce{
-  UrlLocalDataSorceImpl();
+
+class UrlLocalDataSorceImpl implements UrlLocalDataSource {
+  final SharedPreferences sharedPreferences;
+  UrlLocalDataSorceImpl({required this.sharedPreferences});
 
   @override
-  Future<String> getUrlLocal() async{
-    return 'https://ya.ru/';
+  Future<String> getUrlFromCache() async{
+    String url = await sharedPreferences.getString('url') ?? '';
+    return url;
   }
+
+  @override
+  Future<void> urlToCache(String url) async {
+    await sharedPreferences.setString('url', url);
+  }
+
+  @override
+  Future<bool> containsKey(String key) async{
+    return sharedPreferences.containsKey(key);
+  }
+
+
 }

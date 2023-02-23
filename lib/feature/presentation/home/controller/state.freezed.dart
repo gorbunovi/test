@@ -20,8 +20,9 @@ mixin _$HomeState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(WebViewController controller) page,
-    required TResult Function(String url) local,
+    required TResult Function(WebViewController webViewController) page,
+    required TResult Function() preview,
+    required TResult Function() internetError,
     required TResult Function() empty,
     required TResult Function(Failure failure) error,
   }) =>
@@ -30,8 +31,9 @@ mixin _$HomeState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(WebViewController controller)? page,
-    TResult? Function(String url)? local,
+    TResult? Function(WebViewController webViewController)? page,
+    TResult? Function()? preview,
+    TResult? Function()? internetError,
     TResult? Function()? empty,
     TResult? Function(Failure failure)? error,
   }) =>
@@ -40,8 +42,9 @@ mixin _$HomeState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(WebViewController controller)? page,
-    TResult Function(String url)? local,
+    TResult Function(WebViewController webViewController)? page,
+    TResult Function()? preview,
+    TResult Function()? internetError,
     TResult Function()? empty,
     TResult Function(Failure failure)? error,
     required TResult orElse(),
@@ -52,7 +55,8 @@ mixin _$HomeState {
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(Page value) page,
-    required TResult Function(Local value) local,
+    required TResult Function(Preview value) preview,
+    required TResult Function(Internet value) internetError,
     required TResult Function(Empty value) empty,
     required TResult Function(Error value) error,
   }) =>
@@ -62,7 +66,8 @@ mixin _$HomeState {
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
     TResult? Function(Page value)? page,
-    TResult? Function(Local value)? local,
+    TResult? Function(Preview value)? preview,
+    TResult? Function(Internet value)? internetError,
     TResult? Function(Empty value)? empty,
     TResult? Function(Error value)? error,
   }) =>
@@ -72,7 +77,8 @@ mixin _$HomeState {
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(Page value)? page,
-    TResult Function(Local value)? local,
+    TResult Function(Preview value)? preview,
+    TResult Function(Internet value)? internetError,
     TResult Function(Empty value)? empty,
     TResult Function(Error value)? error,
     required TResult orElse(),
@@ -135,8 +141,9 @@ class _$Initial implements Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(WebViewController controller) page,
-    required TResult Function(String url) local,
+    required TResult Function(WebViewController webViewController) page,
+    required TResult Function() preview,
+    required TResult Function() internetError,
     required TResult Function() empty,
     required TResult Function(Failure failure) error,
   }) {
@@ -148,8 +155,9 @@ class _$Initial implements Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(WebViewController controller)? page,
-    TResult? Function(String url)? local,
+    TResult? Function(WebViewController webViewController)? page,
+    TResult? Function()? preview,
+    TResult? Function()? internetError,
     TResult? Function()? empty,
     TResult? Function(Failure failure)? error,
   }) {
@@ -161,8 +169,9 @@ class _$Initial implements Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(WebViewController controller)? page,
-    TResult Function(String url)? local,
+    TResult Function(WebViewController webViewController)? page,
+    TResult Function()? preview,
+    TResult Function()? internetError,
     TResult Function()? empty,
     TResult Function(Failure failure)? error,
     required TResult orElse(),
@@ -179,7 +188,8 @@ class _$Initial implements Initial {
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(Page value) page,
-    required TResult Function(Local value) local,
+    required TResult Function(Preview value) preview,
+    required TResult Function(Internet value) internetError,
     required TResult Function(Empty value) empty,
     required TResult Function(Error value) error,
   }) {
@@ -192,7 +202,8 @@ class _$Initial implements Initial {
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
     TResult? Function(Page value)? page,
-    TResult? Function(Local value)? local,
+    TResult? Function(Preview value)? preview,
+    TResult? Function(Internet value)? internetError,
     TResult? Function(Empty value)? empty,
     TResult? Function(Error value)? error,
   }) {
@@ -205,7 +216,8 @@ class _$Initial implements Initial {
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(Page value)? page,
-    TResult Function(Local value)? local,
+    TResult Function(Preview value)? preview,
+    TResult Function(Internet value)? internetError,
     TResult Function(Empty value)? empty,
     TResult Function(Error value)? error,
     required TResult orElse(),
@@ -259,8 +271,9 @@ class _$Loading implements Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(WebViewController controller) page,
-    required TResult Function(String url) local,
+    required TResult Function(WebViewController webViewController) page,
+    required TResult Function() preview,
+    required TResult Function() internetError,
     required TResult Function() empty,
     required TResult Function(Failure failure) error,
   }) {
@@ -272,8 +285,9 @@ class _$Loading implements Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(WebViewController controller)? page,
-    TResult? Function(String url)? local,
+    TResult? Function(WebViewController webViewController)? page,
+    TResult? Function()? preview,
+    TResult? Function()? internetError,
     TResult? Function()? empty,
     TResult? Function(Failure failure)? error,
   }) {
@@ -285,8 +299,9 @@ class _$Loading implements Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(WebViewController controller)? page,
-    TResult Function(String url)? local,
+    TResult Function(WebViewController webViewController)? page,
+    TResult Function()? preview,
+    TResult Function()? internetError,
     TResult Function()? empty,
     TResult Function(Failure failure)? error,
     required TResult orElse(),
@@ -303,7 +318,8 @@ class _$Loading implements Loading {
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(Page value) page,
-    required TResult Function(Local value) local,
+    required TResult Function(Preview value) preview,
+    required TResult Function(Internet value) internetError,
     required TResult Function(Empty value) empty,
     required TResult Function(Error value) error,
   }) {
@@ -316,7 +332,8 @@ class _$Loading implements Loading {
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
     TResult? Function(Page value)? page,
-    TResult? Function(Local value)? local,
+    TResult? Function(Preview value)? preview,
+    TResult? Function(Internet value)? internetError,
     TResult? Function(Empty value)? empty,
     TResult? Function(Error value)? error,
   }) {
@@ -329,7 +346,8 @@ class _$Loading implements Loading {
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(Page value)? page,
-    TResult Function(Local value)? local,
+    TResult Function(Preview value)? preview,
+    TResult Function(Internet value)? internetError,
     TResult Function(Empty value)? empty,
     TResult Function(Error value)? error,
     required TResult orElse(),
@@ -350,7 +368,7 @@ abstract class _$$PageCopyWith<$Res> {
   factory _$$PageCopyWith(_$Page value, $Res Function(_$Page) then) =
       __$$PageCopyWithImpl<$Res>;
   @useResult
-  $Res call({WebViewController controller});
+  $Res call({WebViewController webViewController});
 }
 
 /// @nodoc
@@ -362,12 +380,12 @@ class __$$PageCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res, _$Page>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? controller = null,
+    Object? webViewController = null,
   }) {
     return _then(_$Page(
-      controller: null == controller
-          ? _value.controller
-          : controller // ignore: cast_nullable_to_non_nullable
+      webViewController: null == webViewController
+          ? _value.webViewController
+          : webViewController // ignore: cast_nullable_to_non_nullable
               as WebViewController,
     ));
   }
@@ -376,14 +394,14 @@ class __$$PageCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res, _$Page>
 /// @nodoc
 
 class _$Page implements Page {
-  const _$Page({required this.controller});
+  const _$Page({required this.webViewController});
 
   @override
-  final WebViewController controller;
+  final WebViewController webViewController;
 
   @override
   String toString() {
-    return 'HomeState.page(controller: $controller)';
+    return 'HomeState.page(webViewController: $webViewController)';
   }
 
   @override
@@ -391,12 +409,12 @@ class _$Page implements Page {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$Page &&
-            (identical(other.controller, controller) ||
-                other.controller == controller));
+            (identical(other.webViewController, webViewController) ||
+                other.webViewController == webViewController));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, controller);
+  int get hashCode => Object.hash(runtimeType, webViewController);
 
   @JsonKey(ignore: true)
   @override
@@ -409,12 +427,13 @@ class _$Page implements Page {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(WebViewController controller) page,
-    required TResult Function(String url) local,
+    required TResult Function(WebViewController webViewController) page,
+    required TResult Function() preview,
+    required TResult Function() internetError,
     required TResult Function() empty,
     required TResult Function(Failure failure) error,
   }) {
-    return page(controller);
+    return page(webViewController);
   }
 
   @override
@@ -422,12 +441,13 @@ class _$Page implements Page {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(WebViewController controller)? page,
-    TResult? Function(String url)? local,
+    TResult? Function(WebViewController webViewController)? page,
+    TResult? Function()? preview,
+    TResult? Function()? internetError,
     TResult? Function()? empty,
     TResult? Function(Failure failure)? error,
   }) {
-    return page?.call(controller);
+    return page?.call(webViewController);
   }
 
   @override
@@ -435,14 +455,15 @@ class _$Page implements Page {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(WebViewController controller)? page,
-    TResult Function(String url)? local,
+    TResult Function(WebViewController webViewController)? page,
+    TResult Function()? preview,
+    TResult Function()? internetError,
     TResult Function()? empty,
     TResult Function(Failure failure)? error,
     required TResult orElse(),
   }) {
     if (page != null) {
-      return page(controller);
+      return page(webViewController);
     }
     return orElse();
   }
@@ -453,7 +474,8 @@ class _$Page implements Page {
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(Page value) page,
-    required TResult Function(Local value) local,
+    required TResult Function(Preview value) preview,
+    required TResult Function(Internet value) internetError,
     required TResult Function(Empty value) empty,
     required TResult Function(Error value) error,
   }) {
@@ -466,7 +488,8 @@ class _$Page implements Page {
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
     TResult? Function(Page value)? page,
-    TResult? Function(Local value)? local,
+    TResult? Function(Preview value)? preview,
+    TResult? Function(Internet value)? internetError,
     TResult? Function(Empty value)? empty,
     TResult? Function(Error value)? error,
   }) {
@@ -479,7 +502,8 @@ class _$Page implements Page {
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(Page value)? page,
-    TResult Function(Local value)? local,
+    TResult Function(Preview value)? preview,
+    TResult Function(Internet value)? internetError,
     TResult Function(Empty value)? empty,
     TResult Function(Error value)? error,
     required TResult orElse(),
@@ -492,82 +516,59 @@ class _$Page implements Page {
 }
 
 abstract class Page implements HomeState {
-  const factory Page({required final WebViewController controller}) = _$Page;
+  const factory Page({required final WebViewController webViewController}) =
+      _$Page;
 
-  WebViewController get controller;
+  WebViewController get webViewController;
   @JsonKey(ignore: true)
   _$$PageCopyWith<_$Page> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$LocalCopyWith<$Res> {
-  factory _$$LocalCopyWith(_$Local value, $Res Function(_$Local) then) =
-      __$$LocalCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String url});
+abstract class _$$PreviewCopyWith<$Res> {
+  factory _$$PreviewCopyWith(_$Preview value, $Res Function(_$Preview) then) =
+      __$$PreviewCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$LocalCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res, _$Local>
-    implements _$$LocalCopyWith<$Res> {
-  __$$LocalCopyWithImpl(_$Local _value, $Res Function(_$Local) _then)
+class __$$PreviewCopyWithImpl<$Res>
+    extends _$HomeStateCopyWithImpl<$Res, _$Preview>
+    implements _$$PreviewCopyWith<$Res> {
+  __$$PreviewCopyWithImpl(_$Preview _value, $Res Function(_$Preview) _then)
       : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? url = null,
-  }) {
-    return _then(_$Local(
-      url: null == url
-          ? _value.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$Local implements Local {
-  const _$Local({required this.url});
-
-  @override
-  final String url;
+class _$Preview implements Preview {
+  const _$Preview();
 
   @override
   String toString() {
-    return 'HomeState.local(url: $url)';
+    return 'HomeState.preview()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$Local &&
-            (identical(other.url, url) || other.url == url));
+        (other.runtimeType == runtimeType && other is _$Preview);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, url);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$LocalCopyWith<_$Local> get copyWith =>
-      __$$LocalCopyWithImpl<_$Local>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(WebViewController controller) page,
-    required TResult Function(String url) local,
+    required TResult Function(WebViewController webViewController) page,
+    required TResult Function() preview,
+    required TResult Function() internetError,
     required TResult Function() empty,
     required TResult Function(Failure failure) error,
   }) {
-    return local(url);
+    return preview();
   }
 
   @override
@@ -575,12 +576,13 @@ class _$Local implements Local {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(WebViewController controller)? page,
-    TResult? Function(String url)? local,
+    TResult? Function(WebViewController webViewController)? page,
+    TResult? Function()? preview,
+    TResult? Function()? internetError,
     TResult? Function()? empty,
     TResult? Function(Failure failure)? error,
   }) {
-    return local?.call(url);
+    return preview?.call();
   }
 
   @override
@@ -588,14 +590,15 @@ class _$Local implements Local {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(WebViewController controller)? page,
-    TResult Function(String url)? local,
+    TResult Function(WebViewController webViewController)? page,
+    TResult Function()? preview,
+    TResult Function()? internetError,
     TResult Function()? empty,
     TResult Function(Failure failure)? error,
     required TResult orElse(),
   }) {
-    if (local != null) {
-      return local(url);
+    if (preview != null) {
+      return preview();
     }
     return orElse();
   }
@@ -606,11 +609,12 @@ class _$Local implements Local {
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(Page value) page,
-    required TResult Function(Local value) local,
+    required TResult Function(Preview value) preview,
+    required TResult Function(Internet value) internetError,
     required TResult Function(Empty value) empty,
     required TResult Function(Error value) error,
   }) {
-    return local(this);
+    return preview(this);
   }
 
   @override
@@ -619,11 +623,12 @@ class _$Local implements Local {
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
     TResult? Function(Page value)? page,
-    TResult? Function(Local value)? local,
+    TResult? Function(Preview value)? preview,
+    TResult? Function(Internet value)? internetError,
     TResult? Function(Empty value)? empty,
     TResult? Function(Error value)? error,
   }) {
-    return local?.call(this);
+    return preview?.call(this);
   }
 
   @override
@@ -632,24 +637,152 @@ class _$Local implements Local {
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(Page value)? page,
-    TResult Function(Local value)? local,
+    TResult Function(Preview value)? preview,
+    TResult Function(Internet value)? internetError,
     TResult Function(Empty value)? empty,
     TResult Function(Error value)? error,
     required TResult orElse(),
   }) {
-    if (local != null) {
-      return local(this);
+    if (preview != null) {
+      return preview(this);
     }
     return orElse();
   }
 }
 
-abstract class Local implements HomeState {
-  const factory Local({required final String url}) = _$Local;
+abstract class Preview implements HomeState {
+  const factory Preview() = _$Preview;
+}
 
-  String get url;
-  @JsonKey(ignore: true)
-  _$$LocalCopyWith<_$Local> get copyWith => throw _privateConstructorUsedError;
+/// @nodoc
+abstract class _$$InternetCopyWith<$Res> {
+  factory _$$InternetCopyWith(
+          _$Internet value, $Res Function(_$Internet) then) =
+      __$$InternetCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$InternetCopyWithImpl<$Res>
+    extends _$HomeStateCopyWithImpl<$Res, _$Internet>
+    implements _$$InternetCopyWith<$Res> {
+  __$$InternetCopyWithImpl(_$Internet _value, $Res Function(_$Internet) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$Internet implements Internet {
+  const _$Internet();
+
+  @override
+  String toString() {
+    return 'HomeState.internetError()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$Internet);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(WebViewController webViewController) page,
+    required TResult Function() preview,
+    required TResult Function() internetError,
+    required TResult Function() empty,
+    required TResult Function(Failure failure) error,
+  }) {
+    return internetError();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(WebViewController webViewController)? page,
+    TResult? Function()? preview,
+    TResult? Function()? internetError,
+    TResult? Function()? empty,
+    TResult? Function(Failure failure)? error,
+  }) {
+    return internetError?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(WebViewController webViewController)? page,
+    TResult Function()? preview,
+    TResult Function()? internetError,
+    TResult Function()? empty,
+    TResult Function(Failure failure)? error,
+    required TResult orElse(),
+  }) {
+    if (internetError != null) {
+      return internetError();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Initial value) initial,
+    required TResult Function(Loading value) loading,
+    required TResult Function(Page value) page,
+    required TResult Function(Preview value) preview,
+    required TResult Function(Internet value) internetError,
+    required TResult Function(Empty value) empty,
+    required TResult Function(Error value) error,
+  }) {
+    return internetError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Initial value)? initial,
+    TResult? Function(Loading value)? loading,
+    TResult? Function(Page value)? page,
+    TResult? Function(Preview value)? preview,
+    TResult? Function(Internet value)? internetError,
+    TResult? Function(Empty value)? empty,
+    TResult? Function(Error value)? error,
+  }) {
+    return internetError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(Loading value)? loading,
+    TResult Function(Page value)? page,
+    TResult Function(Preview value)? preview,
+    TResult Function(Internet value)? internetError,
+    TResult Function(Empty value)? empty,
+    TResult Function(Error value)? error,
+    required TResult orElse(),
+  }) {
+    if (internetError != null) {
+      return internetError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class Internet implements HomeState {
+  const factory Internet() = _$Internet;
 }
 
 /// @nodoc
@@ -689,8 +822,9 @@ class _$Empty implements Empty {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(WebViewController controller) page,
-    required TResult Function(String url) local,
+    required TResult Function(WebViewController webViewController) page,
+    required TResult Function() preview,
+    required TResult Function() internetError,
     required TResult Function() empty,
     required TResult Function(Failure failure) error,
   }) {
@@ -702,8 +836,9 @@ class _$Empty implements Empty {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(WebViewController controller)? page,
-    TResult? Function(String url)? local,
+    TResult? Function(WebViewController webViewController)? page,
+    TResult? Function()? preview,
+    TResult? Function()? internetError,
     TResult? Function()? empty,
     TResult? Function(Failure failure)? error,
   }) {
@@ -715,8 +850,9 @@ class _$Empty implements Empty {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(WebViewController controller)? page,
-    TResult Function(String url)? local,
+    TResult Function(WebViewController webViewController)? page,
+    TResult Function()? preview,
+    TResult Function()? internetError,
     TResult Function()? empty,
     TResult Function(Failure failure)? error,
     required TResult orElse(),
@@ -733,7 +869,8 @@ class _$Empty implements Empty {
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(Page value) page,
-    required TResult Function(Local value) local,
+    required TResult Function(Preview value) preview,
+    required TResult Function(Internet value) internetError,
     required TResult Function(Empty value) empty,
     required TResult Function(Error value) error,
   }) {
@@ -746,7 +883,8 @@ class _$Empty implements Empty {
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
     TResult? Function(Page value)? page,
-    TResult? Function(Local value)? local,
+    TResult? Function(Preview value)? preview,
+    TResult? Function(Internet value)? internetError,
     TResult? Function(Empty value)? empty,
     TResult? Function(Error value)? error,
   }) {
@@ -759,7 +897,8 @@ class _$Empty implements Empty {
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(Page value)? page,
-    TResult Function(Local value)? local,
+    TResult Function(Preview value)? preview,
+    TResult Function(Internet value)? internetError,
     TResult Function(Empty value)? empty,
     TResult Function(Error value)? error,
     required TResult orElse(),
@@ -838,8 +977,9 @@ class _$Error implements Error {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(WebViewController controller) page,
-    required TResult Function(String url) local,
+    required TResult Function(WebViewController webViewController) page,
+    required TResult Function() preview,
+    required TResult Function() internetError,
     required TResult Function() empty,
     required TResult Function(Failure failure) error,
   }) {
@@ -851,8 +991,9 @@ class _$Error implements Error {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(WebViewController controller)? page,
-    TResult? Function(String url)? local,
+    TResult? Function(WebViewController webViewController)? page,
+    TResult? Function()? preview,
+    TResult? Function()? internetError,
     TResult? Function()? empty,
     TResult? Function(Failure failure)? error,
   }) {
@@ -864,8 +1005,9 @@ class _$Error implements Error {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(WebViewController controller)? page,
-    TResult Function(String url)? local,
+    TResult Function(WebViewController webViewController)? page,
+    TResult Function()? preview,
+    TResult Function()? internetError,
     TResult Function()? empty,
     TResult Function(Failure failure)? error,
     required TResult orElse(),
@@ -882,7 +1024,8 @@ class _$Error implements Error {
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(Page value) page,
-    required TResult Function(Local value) local,
+    required TResult Function(Preview value) preview,
+    required TResult Function(Internet value) internetError,
     required TResult Function(Empty value) empty,
     required TResult Function(Error value) error,
   }) {
@@ -895,7 +1038,8 @@ class _$Error implements Error {
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
     TResult? Function(Page value)? page,
-    TResult? Function(Local value)? local,
+    TResult? Function(Preview value)? preview,
+    TResult? Function(Internet value)? internetError,
     TResult? Function(Empty value)? empty,
     TResult? Function(Error value)? error,
   }) {
@@ -908,7 +1052,8 @@ class _$Error implements Error {
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(Page value)? page,
-    TResult Function(Local value)? local,
+    TResult Function(Preview value)? preview,
+    TResult Function(Internet value)? internetError,
     TResult Function(Empty value)? empty,
     TResult Function(Error value)? error,
     required TResult orElse(),

@@ -1,6 +1,7 @@
 import 'package:get_it/get_it.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:test_work/core/platform/network_info.dart';
 import 'package:test_work/feature/data/datasources/local/local_data_source.dart';
 import 'package:test_work/feature/data/datasources/remote/remote_data_source.dart';
@@ -21,17 +22,17 @@ Future<void> init() async {
   //Repository
   sl.registerLazySingleton<UrlRepository>(
         () => UrlRepositoryImpl(
-      catalogLocalDataSorce: sl(),
-      catalogRemoteDataSource: sl(),
+      urlLocalDataSorce: sl(),
+      urlRemoteDataSource: sl(),
       networkInfo: sl(),
     ),
   );
 
-  sl.registerLazySingleton<CatalogLocalDataSorce>(
-        () => UrlLocalDataSorceImpl(),
+  sl.registerLazySingleton<UrlLocalDataSource>(
+        () => UrlLocalDataSorceImpl(sharedPreferences: sl()),
   );
 
-  sl.registerLazySingleton<CatalogRemoteDataSource>(
+  sl.registerLazySingleton<UrlRemoteDataSource>(
         () => UrlRemoteDataSourceImpl(client: sl()),
   );
   //Core
@@ -39,6 +40,8 @@ Future<void> init() async {
         () => NetworkInfoImp(sl()),
   );
   //External
+  final sharedPreferences = await SharedPreferences.getInstance();
+  sl.registerLazySingleton(() => sharedPreferences);
   sl.registerLazySingleton(() => http.Client());
   sl.registerLazySingleton(() => InternetConnectionChecker());
 }

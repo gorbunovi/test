@@ -23,12 +23,13 @@ dependencies:
   get_it: ^7.2.0
   # WebView for Flutter
   webview_flutter: ^4.0.4
-#  webview_flutter_plus: ^0.3.0+2
   # code generators
   # freezed
   freezed_annotation: ^2.2.0
   # bloc state managment
   flutter_bloc: ^8.1.1
+  # Local cache
+  shared_preferences: ^2.0.18
 
   cupertino_icons: ^1.0.2
 
