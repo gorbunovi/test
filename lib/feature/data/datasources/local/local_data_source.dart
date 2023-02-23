@@ -1,3 +1,5 @@
+
+import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 abstract class UrlLocalDataSource {
@@ -15,6 +17,10 @@ class UrlLocalDataSorceImpl implements UrlLocalDataSource {
 
   @override
   Future<String> getUrlFromCache() async{
+      final remoteConfig = RemoteConfig.instance;
+      await remoteConfig.fetch();
+      await remoteConfig.activate();
+      print('URL ================================ ${remoteConfig.getString('url')}');
     String url = await sharedPreferences.getString('url') ?? '';
     return url;
   }
