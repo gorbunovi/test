@@ -32,6 +32,8 @@ class HomeController extends Cubit<HomeState> {
 
     if (_url == 'no internet'){
       emit(const Internet());
+    }else if(_url=='pre'){
+      emit(const Preview());
     }else{
       webcontroller = WebViewController()
         ..setJavaScriptMode(JavaScriptMode.unrestricted)

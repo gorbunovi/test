@@ -7,7 +7,7 @@ class NoInternetWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: Center(
-        child: Text('Отсутствует связь с интернетом'),
+        child: Text('No internet connection'),
       ),
     );
   }

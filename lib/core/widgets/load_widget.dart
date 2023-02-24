@@ -11,7 +11,7 @@ class LoadWidget extends StatelessWidget {
           preferredSize: const Size.fromHeight(50),
           child: AppBar(
               toolbarHeight: 50,
-              title: const Text('Загрузка',
+              title: const Text('LOAD',
                 style: TextStyle(
                   color: Color(0xff322316),
                 ),

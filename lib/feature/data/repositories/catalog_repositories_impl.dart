@@ -1,5 +1,9 @@
 
+import 'dart:io';
+
 import 'package:dartz/dartz.dart';
+// import 'package:device_info/device_info.dart';
+import 'package:device_info_plus/device_info_plus.dart';
 import 'package:test_work/core/error/exception.dart';
 import 'package:test_work/core/error/failure.dart';
 import 'package:test_work/core/platform/network_info.dart';
@@ -18,13 +22,21 @@ class UrlRepositoryImpl implements UrlRepository {
   final UrlRemoteDataSource urlRemoteDataSource;
   final NetworkInfo networkInfo;
 
+
+
   // подключение фаербэйс и получение ссылки
 //сохранение ссылки
 
   @override
   Future<Either<Failure, String>> getUrl() async {
     String url;
-
+    if(Platform.isAndroid){
+      DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
+      AndroidDeviceInfo androidInfo = await deviceInfo.androidInfo;
+      if(androidInfo.isPhysicalDevice){
+       return  const Right('pre');
+      }
+    }
     if(await networkInfo.isConnected) {
       try {
         if(await urlLocalDataSorce.containsKey('url')){
@@ -46,5 +58,6 @@ class UrlRepositoryImpl implements UrlRepository {
         return Left(CacheFailure(''));
       }
     }
+    //////////////////////////////////////
   }
 }
