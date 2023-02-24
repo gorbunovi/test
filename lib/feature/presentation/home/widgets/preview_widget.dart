@@ -5,9 +5,13 @@ class PreViewWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Center(
-        child: Text('страница заглушка')
+        child: Image.asset('assets/pre.png',
+          // fit: BoxFit.fitWidth,
+          height: MediaQuery.of(context).size.height,
+          // width: _sizePhoto,
+        ),
       ),
     );
   }
