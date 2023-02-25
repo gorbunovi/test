@@ -1,8 +1,4 @@
-
-import 'dart:io';
-
 import 'package:dartz/dartz.dart';
-// import 'package:device_info/device_info.dart';
 import 'package:device_info_plus/device_info_plus.dart';
 import 'package:test_work/core/error/exception.dart';
 import 'package:test_work/core/error/failure.dart';
@@ -23,40 +19,37 @@ class UrlRepositoryImpl implements UrlRepository {
   final NetworkInfo networkInfo;
 
 
-
-  // подключение фаербэйс и получение ссылки
-//сохранение ссылки
-
   @override
   Future<Either<Failure, String>> getUrl() async {
     String url;
-    final isE =  await ballScokers();
-    if(isE){
-      print('эмулытор ================= $isE');
-       return  const Right('pre');
-    }
-    if(await networkInfo.isConnected) {
-      try {
-        if(await urlLocalDataSorce.containsKey('url')){
-          url= await urlLocalDataSorce.getUrlFromCache();
-          print('local data source');
+
+    try{
+      if(await urlLocalDataSorce.containsKey('url')) {// проверка на ссылку
+        //ссылка есть
+        if(await networkInfo.isConnected) { // проверка есть ли интернет
+          // интернет есть
+          url= await urlLocalDataSorce.getUrlFromCache(); //получение ссылки из кэша
+          return Right(url);
         }else{
-          url = await urlRemoteDataSource.getUrl();
-          await urlLocalDataSorce.urlToCache(url);
-          print('remove data source');
+          // интернета нет
+          return const Right('no internet');
         }
-        return Right(url);
-      } on CacheException {
-        return Left(CacheFailure(''));
+      }else{
+        //ссылки нет
+        final isE =  await ballScokers(); // проверка на эмулятор
+        url = await urlRemoteDataSource.getUrl(); //получение ссылки из FireBace
+        if(url == '' || isE){ // проверка на пустую ссылку и эмулятор
+          // ссылка пустая или запустили на эмуляторе
+          return  const Right('pre');
+        }else{
+          //сылка с данными
+          await urlLocalDataSorce.urlToCache(url); // сохранение ссылки в кэш
+          return Right(url);
+        }
       }
-    }else{
-      try {
-        return const Right('no internet');
-      } on CacheException {
-        return Left(CacheFailure(''));
-      }
+    }on CacheException{
+      return Left(CacheFailure(''));
     }
-    //////////////////////////////////////
   }
 
   Future<bool> ballScokers() async {
