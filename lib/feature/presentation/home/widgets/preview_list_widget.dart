@@ -20,6 +20,17 @@ class PreviewListWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFF24282F),
+      appBar: AppBar(
+        backgroundColor: const Color(0xFF24282F),
+        title: const Text(
+          'NEW SPORT',
+          style: TextStyle(
+            fontSize: 20,
+            color: Colors.white,
+            fontWeight: FontWeight.w700,
+          ),
+        ),
+      ),
       body: SafeArea(
         child: ListView.builder(
           itemCount: previewList.length,
@@ -46,7 +57,6 @@ class PreviewListWidget extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-
                             Text(
                               previewList[index].title,
                               style: const TextStyle(
@@ -58,13 +68,13 @@ class PreviewListWidget extends StatelessWidget {
                             const SizedBox(
                               height: 20,
                             ),
-                            Text(
-                              previewList[index].diskription,
-                              textAlign: TextAlign.justify,
-                                // overflow: TextOverflow.ellipsis,
-                              style: const TextStyle(color: Color(0xFF9E9E9E),
-                              ),
-                            ),
+                            // Text(
+                            //   previewList[index].diskription,
+                            //   textAlign: TextAlign.justify,
+                            //     overflow: TextOverflow.ellipsis,
+                            //   style: const TextStyle(color: Color(0xFF9E9E9E),
+                            //   ),
+                            // ),
                             const SizedBox(
                               height: 4,
                             ),

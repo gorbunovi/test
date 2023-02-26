@@ -1,5 +1,5 @@
 class PreviewEntity{
-  String id;
+  int id;
   String title;
   String diskription;
   String image;

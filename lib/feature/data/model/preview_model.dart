@@ -15,7 +15,7 @@ class PreviewModel extends PreviewEntity{
 
   factory PreviewModel.fromJson(Map<String, dynamic> json){
     return PreviewModel(
-      id: json['id'] as String,
+      id: json['id'] as int,
       title: json['title'] as String,
       diskription: json['diskription'] as String,
       image: json['image'] as String,

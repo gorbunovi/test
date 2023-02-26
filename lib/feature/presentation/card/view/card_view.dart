@@ -15,7 +15,7 @@ class CardPage extends StatelessWidget {
         builder: (context, state) {
           return state.when(
               initial: () => const IndexHomeWidget(),
-              preview: (preview) =>  PreViewWidget(),
+              preview: (preview) =>  PreViewWidget(previewEntity: preview,),
               loading: () => const core_widgets.LoadWidget(),
               empty: () => const core_widgets.LoadWidget(),
               error: (failure) => core_widgets.ErrorWidget(failure.message)
