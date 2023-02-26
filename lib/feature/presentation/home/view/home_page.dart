@@ -5,6 +5,7 @@ import 'package:test_work/core/core.dart' as core_widgets;
 import 'package:test_work/feature/presentation/home/widgets/home_widget.dart';
 import 'package:test_work/feature/presentation/home/widgets/index_home_widget.dart';
 import 'package:test_work/feature/presentation/home/widgets/no_internet_widget.dart';
+import 'package:test_work/feature/presentation/home/widgets/preview_list_widget.dart';
 import 'package:test_work/servise_locator.dart';
 
 import '../controller/index.dart';
@@ -22,7 +23,10 @@ class HomePage extends StatelessWidget {
                 controller: webController,
               ),
               internetError: () => const NoInternetWidget(),
-              preview: () => const PreViewWidget(),
+              preview: (previewList) =>  PreviewListWidget(
+                previewList: previewList,
+                toCard: (preview) => BlocProvider.of<HomeController>(context).toCard(preview),
+              ),
               loading: () => const core_widgets.LoadWidget(),
               empty: () => const core_widgets.LoadWidget(),
               error: (failure) => core_widgets.ErrorWidget(failure.message)

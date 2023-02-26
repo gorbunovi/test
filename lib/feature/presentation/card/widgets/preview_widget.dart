@@ -6,6 +6,9 @@ class PreViewWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+
+      ),
       body: SafeArea(
         child: ListView(
           children: <Widget>[
@@ -26,37 +29,6 @@ class PreViewWidget extends StatelessWidget {
               child: Image.asset('assets/photo.jpg'),
             ),
             const SizedBox(height: 20,),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                ElevatedButton(
-                  style:ElevatedButton.styleFrom(primary: Colors.indigoAccent),
-                    onPressed: (){},
-                  child: const Text('VIEW ALL COURSES', style: TextStyle(color: Colors.white),),
-                ),
-                ElevatedButton(
-                  style:ElevatedButton.styleFrom(primary: Colors.brown),
-                  onPressed: (){},
-                  child:const Text('REMOVE FROM FAVORITE', style: TextStyle(color: Colors.white),),
-                ),
-              ],
-            ),
-            const SizedBox(height: 20,),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                ElevatedButton(
-                  style:ElevatedButton.styleFrom(primary: Colors.black12),
-                  onPressed: (){},
-                  child: const Text('Strengh and Condition'),
-                ),
-                ElevatedButton(
-                  style:ElevatedButton.styleFrom(primary: Colors.black12),
-                  onPressed: (){},
-                  child:const Text('Material Arts'),
-                ),
-              ],
-            ),
             const SizedBox(height: 10,),
             const Padding(
               padding: EdgeInsets.all(10.0),

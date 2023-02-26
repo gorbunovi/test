@@ -1,17 +1,22 @@
 
-import 'dart:convert';
-
-import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:test_work/feature/domain/entities/preview_entity.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import '../../../domain/usecases/get_url.dart';
+import '../../../routes/app_routes.dart';
 import 'index.dart';
+import 'package:get/get.dart';
 
 class HomeController extends Cubit<HomeState> {
   HomeController({required this.getUrl}) : super(const Initial());
   final GetUrl getUrl;
   late String _url;
   late final WebViewController webcontroller;
+  final List<PreviewEntity> previewList = [
+    PreviewEntity(id: '1', title: 'Aleksei Oleynik', diskription: '“Boa-Constrictor” TOP 10 heavyweight UFC fighter! MMA legend ! Proud husband and father !', image: 'https://static.getfitshape.com/user/pride_kharkov_inbox_ru/small_photo.jpg?v=1612344482'),
+    PreviewEntity(id: '1', title: 'Aleksei Oleynik', diskription: '“Boa-Constrictor” TOP 10 heavyweight UFC fighter! MMA legend ! Proud husband and father !', image: 'https://static.getfitshape.com/user/pride_kharkov_inbox_ru/small_photo.jpg?v=1612344482'),
+    PreviewEntity(id: '1', title: 'Aleksei Oleynik', diskription: '“Boa-Constrictor” TOP 10 heavyweight UFC fighter! MMA legend ! Proud husband and father !', image: 'https://static.getfitshape.com/user/pride_kharkov_inbox_ru/small_photo.jpg?v=1612344482'),
+  ];
 
   Future<void> init() async{
     final currentState = state;
@@ -33,19 +38,19 @@ class HomeController extends Cubit<HomeState> {
     if (_url == 'no internet'){
       emit(const Internet());
     }else if(_url=='pre'){
-      emit(const Preview());
+      emit(Preview(previewList: previewList));
     }else{
       webcontroller = WebViewController()
         ..setJavaScriptMode(JavaScriptMode.unrestricted)
         ..loadRequest(Uri.parse(_url));
       emit(Page(webViewController: webcontroller));
     }
-
-
   }
 
-
-
+  void toCard(PreviewEntity preview){
+    print('toCard');
+    Get.toNamed(Routes.CARD, arguments: preview);
+  }
 
 
 }

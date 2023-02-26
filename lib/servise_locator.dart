@@ -8,6 +8,7 @@ import 'package:test_work/feature/data/datasources/remote/remote_data_source.dar
 import 'package:test_work/feature/data/repositories/catalog_repositories_impl.dart';
 import 'package:test_work/feature/domain/repositories/catalog_repository.dart';
 import 'package:test_work/feature/domain/usecases/get_url.dart';
+import 'package:test_work/feature/presentation/card/controller/card_controller.dart';
 
 import 'feature/presentation/home/controller/home_controller.dart';
 
@@ -16,6 +17,7 @@ final sl = GetIt.instance;
 Future<void> init() async {
   // Cubit
   sl.registerFactory(() => HomeController(getUrl:  sl()));
+  sl.registerFactory(() => CardController());
 
   //UseCases
   sl.registerLazySingleton(() => GetUrl(sl()));

@@ -15,14 +15,12 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$HomeState {
+mixin _$CardState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(WebViewController webViewController) page,
-    required TResult Function(List<PreviewEntity> previewList) preview,
-    required TResult Function() internetError,
+    required TResult Function(PreviewEntity preview) preview,
     required TResult Function() empty,
     required TResult Function(Failure failure) error,
   }) =>
@@ -31,9 +29,7 @@ mixin _$HomeState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(WebViewController webViewController)? page,
-    TResult? Function(List<PreviewEntity> previewList)? preview,
-    TResult? Function()? internetError,
+    TResult? Function(PreviewEntity preview)? preview,
     TResult? Function()? empty,
     TResult? Function(Failure failure)? error,
   }) =>
@@ -42,9 +38,7 @@ mixin _$HomeState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(WebViewController webViewController)? page,
-    TResult Function(List<PreviewEntity> previewList)? preview,
-    TResult Function()? internetError,
+    TResult Function(PreviewEntity preview)? preview,
     TResult Function()? empty,
     TResult Function(Failure failure)? error,
     required TResult orElse(),
@@ -54,9 +48,7 @@ mixin _$HomeState {
   TResult map<TResult extends Object?>({
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
-    required TResult Function(Page value) page,
     required TResult Function(Preview value) preview,
-    required TResult Function(Internet value) internetError,
     required TResult Function(Empty value) empty,
     required TResult Function(Error value) error,
   }) =>
@@ -65,9 +57,7 @@ mixin _$HomeState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
-    TResult? Function(Page value)? page,
     TResult? Function(Preview value)? preview,
-    TResult? Function(Internet value)? internetError,
     TResult? Function(Empty value)? empty,
     TResult? Function(Error value)? error,
   }) =>
@@ -76,9 +66,7 @@ mixin _$HomeState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
-    TResult Function(Page value)? page,
     TResult Function(Preview value)? preview,
-    TResult Function(Internet value)? internetError,
     TResult Function(Empty value)? empty,
     TResult Function(Error value)? error,
     required TResult orElse(),
@@ -87,15 +75,15 @@ mixin _$HomeState {
 }
 
 /// @nodoc
-abstract class $HomeStateCopyWith<$Res> {
-  factory $HomeStateCopyWith(HomeState value, $Res Function(HomeState) then) =
-      _$HomeStateCopyWithImpl<$Res, HomeState>;
+abstract class $CardStateCopyWith<$Res> {
+  factory $CardStateCopyWith(CardState value, $Res Function(CardState) then) =
+      _$CardStateCopyWithImpl<$Res, CardState>;
 }
 
 /// @nodoc
-class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
-    implements $HomeStateCopyWith<$Res> {
-  _$HomeStateCopyWithImpl(this._value, this._then);
+class _$CardStateCopyWithImpl<$Res, $Val extends CardState>
+    implements $CardStateCopyWith<$Res> {
+  _$CardStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -111,7 +99,7 @@ abstract class _$$InitialCopyWith<$Res> {
 
 /// @nodoc
 class __$$InitialCopyWithImpl<$Res>
-    extends _$HomeStateCopyWithImpl<$Res, _$Initial>
+    extends _$CardStateCopyWithImpl<$Res, _$Initial>
     implements _$$InitialCopyWith<$Res> {
   __$$InitialCopyWithImpl(_$Initial _value, $Res Function(_$Initial) _then)
       : super(_value, _then);
@@ -124,7 +112,7 @@ class _$Initial implements Initial {
 
   @override
   String toString() {
-    return 'HomeState.initial()';
+    return 'CardState.initial()';
   }
 
   @override
@@ -141,9 +129,7 @@ class _$Initial implements Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(WebViewController webViewController) page,
-    required TResult Function(List<PreviewEntity> previewList) preview,
-    required TResult Function() internetError,
+    required TResult Function(PreviewEntity preview) preview,
     required TResult Function() empty,
     required TResult Function(Failure failure) error,
   }) {
@@ -155,9 +141,7 @@ class _$Initial implements Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(WebViewController webViewController)? page,
-    TResult? Function(List<PreviewEntity> previewList)? preview,
-    TResult? Function()? internetError,
+    TResult? Function(PreviewEntity preview)? preview,
     TResult? Function()? empty,
     TResult? Function(Failure failure)? error,
   }) {
@@ -169,9 +153,7 @@ class _$Initial implements Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(WebViewController webViewController)? page,
-    TResult Function(List<PreviewEntity> previewList)? preview,
-    TResult Function()? internetError,
+    TResult Function(PreviewEntity preview)? preview,
     TResult Function()? empty,
     TResult Function(Failure failure)? error,
     required TResult orElse(),
@@ -187,9 +169,7 @@ class _$Initial implements Initial {
   TResult map<TResult extends Object?>({
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
-    required TResult Function(Page value) page,
     required TResult Function(Preview value) preview,
-    required TResult Function(Internet value) internetError,
     required TResult Function(Empty value) empty,
     required TResult Function(Error value) error,
   }) {
@@ -201,9 +181,7 @@ class _$Initial implements Initial {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
-    TResult? Function(Page value)? page,
     TResult? Function(Preview value)? preview,
-    TResult? Function(Internet value)? internetError,
     TResult? Function(Empty value)? empty,
     TResult? Function(Error value)? error,
   }) {
@@ -215,9 +193,7 @@ class _$Initial implements Initial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
-    TResult Function(Page value)? page,
     TResult Function(Preview value)? preview,
-    TResult Function(Internet value)? internetError,
     TResult Function(Empty value)? empty,
     TResult Function(Error value)? error,
     required TResult orElse(),
@@ -229,7 +205,7 @@ class _$Initial implements Initial {
   }
 }
 
-abstract class Initial implements HomeState {
+abstract class Initial implements CardState {
   const factory Initial() = _$Initial;
 }
 
@@ -241,7 +217,7 @@ abstract class _$$LoadingCopyWith<$Res> {
 
 /// @nodoc
 class __$$LoadingCopyWithImpl<$Res>
-    extends _$HomeStateCopyWithImpl<$Res, _$Loading>
+    extends _$CardStateCopyWithImpl<$Res, _$Loading>
     implements _$$LoadingCopyWith<$Res> {
   __$$LoadingCopyWithImpl(_$Loading _value, $Res Function(_$Loading) _then)
       : super(_value, _then);
@@ -254,7 +230,7 @@ class _$Loading implements Loading {
 
   @override
   String toString() {
-    return 'HomeState.loading()';
+    return 'CardState.loading()';
   }
 
   @override
@@ -271,9 +247,7 @@ class _$Loading implements Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(WebViewController webViewController) page,
-    required TResult Function(List<PreviewEntity> previewList) preview,
-    required TResult Function() internetError,
+    required TResult Function(PreviewEntity preview) preview,
     required TResult Function() empty,
     required TResult Function(Failure failure) error,
   }) {
@@ -285,9 +259,7 @@ class _$Loading implements Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(WebViewController webViewController)? page,
-    TResult? Function(List<PreviewEntity> previewList)? preview,
-    TResult? Function()? internetError,
+    TResult? Function(PreviewEntity preview)? preview,
     TResult? Function()? empty,
     TResult? Function(Failure failure)? error,
   }) {
@@ -299,9 +271,7 @@ class _$Loading implements Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(WebViewController webViewController)? page,
-    TResult Function(List<PreviewEntity> previewList)? preview,
-    TResult Function()? internetError,
+    TResult Function(PreviewEntity preview)? preview,
     TResult Function()? empty,
     TResult Function(Failure failure)? error,
     required TResult orElse(),
@@ -317,9 +287,7 @@ class _$Loading implements Loading {
   TResult map<TResult extends Object?>({
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
-    required TResult Function(Page value) page,
     required TResult Function(Preview value) preview,
-    required TResult Function(Internet value) internetError,
     required TResult Function(Empty value) empty,
     required TResult Function(Error value) error,
   }) {
@@ -331,9 +299,7 @@ class _$Loading implements Loading {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
-    TResult? Function(Page value)? page,
     TResult? Function(Preview value)? preview,
-    TResult? Function(Internet value)? internetError,
     TResult? Function(Empty value)? empty,
     TResult? Function(Error value)? error,
   }) {
@@ -345,9 +311,7 @@ class _$Loading implements Loading {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
-    TResult Function(Page value)? page,
     TResult Function(Preview value)? preview,
-    TResult Function(Internet value)? internetError,
     TResult Function(Empty value)? empty,
     TResult Function(Error value)? error,
     required TResult orElse(),
@@ -359,169 +323,8 @@ class _$Loading implements Loading {
   }
 }
 
-abstract class Loading implements HomeState {
+abstract class Loading implements CardState {
   const factory Loading() = _$Loading;
-}
-
-/// @nodoc
-abstract class _$$PageCopyWith<$Res> {
-  factory _$$PageCopyWith(_$Page value, $Res Function(_$Page) then) =
-      __$$PageCopyWithImpl<$Res>;
-  @useResult
-  $Res call({WebViewController webViewController});
-}
-
-/// @nodoc
-class __$$PageCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res, _$Page>
-    implements _$$PageCopyWith<$Res> {
-  __$$PageCopyWithImpl(_$Page _value, $Res Function(_$Page) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? webViewController = null,
-  }) {
-    return _then(_$Page(
-      webViewController: null == webViewController
-          ? _value.webViewController
-          : webViewController // ignore: cast_nullable_to_non_nullable
-              as WebViewController,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$Page implements Page {
-  const _$Page({required this.webViewController});
-
-  @override
-  final WebViewController webViewController;
-
-  @override
-  String toString() {
-    return 'HomeState.page(webViewController: $webViewController)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$Page &&
-            (identical(other.webViewController, webViewController) ||
-                other.webViewController == webViewController));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, webViewController);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$PageCopyWith<_$Page> get copyWith =>
-      __$$PageCopyWithImpl<_$Page>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(WebViewController webViewController) page,
-    required TResult Function(List<PreviewEntity> previewList) preview,
-    required TResult Function() internetError,
-    required TResult Function() empty,
-    required TResult Function(Failure failure) error,
-  }) {
-    return page(webViewController);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(WebViewController webViewController)? page,
-    TResult? Function(List<PreviewEntity> previewList)? preview,
-    TResult? Function()? internetError,
-    TResult? Function()? empty,
-    TResult? Function(Failure failure)? error,
-  }) {
-    return page?.call(webViewController);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(WebViewController webViewController)? page,
-    TResult Function(List<PreviewEntity> previewList)? preview,
-    TResult Function()? internetError,
-    TResult Function()? empty,
-    TResult Function(Failure failure)? error,
-    required TResult orElse(),
-  }) {
-    if (page != null) {
-      return page(webViewController);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(Initial value) initial,
-    required TResult Function(Loading value) loading,
-    required TResult Function(Page value) page,
-    required TResult Function(Preview value) preview,
-    required TResult Function(Internet value) internetError,
-    required TResult Function(Empty value) empty,
-    required TResult Function(Error value) error,
-  }) {
-    return page(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Initial value)? initial,
-    TResult? Function(Loading value)? loading,
-    TResult? Function(Page value)? page,
-    TResult? Function(Preview value)? preview,
-    TResult? Function(Internet value)? internetError,
-    TResult? Function(Empty value)? empty,
-    TResult? Function(Error value)? error,
-  }) {
-    return page?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(Initial value)? initial,
-    TResult Function(Loading value)? loading,
-    TResult Function(Page value)? page,
-    TResult Function(Preview value)? preview,
-    TResult Function(Internet value)? internetError,
-    TResult Function(Empty value)? empty,
-    TResult Function(Error value)? error,
-    required TResult orElse(),
-  }) {
-    if (page != null) {
-      return page(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class Page implements HomeState {
-  const factory Page({required final WebViewController webViewController}) =
-      _$Page;
-
-  WebViewController get webViewController;
-  @JsonKey(ignore: true)
-  _$$PageCopyWith<_$Page> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -529,12 +332,12 @@ abstract class _$$PreviewCopyWith<$Res> {
   factory _$$PreviewCopyWith(_$Preview value, $Res Function(_$Preview) then) =
       __$$PreviewCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<PreviewEntity> previewList});
+  $Res call({PreviewEntity preview});
 }
 
 /// @nodoc
 class __$$PreviewCopyWithImpl<$Res>
-    extends _$HomeStateCopyWithImpl<$Res, _$Preview>
+    extends _$CardStateCopyWithImpl<$Res, _$Preview>
     implements _$$PreviewCopyWith<$Res> {
   __$$PreviewCopyWithImpl(_$Preview _value, $Res Function(_$Preview) _then)
       : super(_value, _then);
@@ -542,13 +345,13 @@ class __$$PreviewCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? previewList = null,
+    Object? preview = null,
   }) {
     return _then(_$Preview(
-      previewList: null == previewList
-          ? _value._previewList
-          : previewList // ignore: cast_nullable_to_non_nullable
-              as List<PreviewEntity>,
+      preview: null == preview
+          ? _value.preview
+          : preview // ignore: cast_nullable_to_non_nullable
+              as PreviewEntity,
     ));
   }
 }
@@ -556,20 +359,14 @@ class __$$PreviewCopyWithImpl<$Res>
 /// @nodoc
 
 class _$Preview implements Preview {
-  const _$Preview({required final List<PreviewEntity> previewList})
-      : _previewList = previewList;
+  const _$Preview({required this.preview});
 
-  final List<PreviewEntity> _previewList;
   @override
-  List<PreviewEntity> get previewList {
-    if (_previewList is EqualUnmodifiableListView) return _previewList;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_previewList);
-  }
+  final PreviewEntity preview;
 
   @override
   String toString() {
-    return 'HomeState.preview(previewList: $previewList)';
+    return 'CardState.preview(preview: $preview)';
   }
 
   @override
@@ -577,13 +374,11 @@ class _$Preview implements Preview {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$Preview &&
-            const DeepCollectionEquality()
-                .equals(other._previewList, _previewList));
+            (identical(other.preview, preview) || other.preview == preview));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_previewList));
+  int get hashCode => Object.hash(runtimeType, preview);
 
   @JsonKey(ignore: true)
   @override
@@ -596,13 +391,11 @@ class _$Preview implements Preview {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(WebViewController webViewController) page,
-    required TResult Function(List<PreviewEntity> previewList) preview,
-    required TResult Function() internetError,
+    required TResult Function(PreviewEntity preview) preview,
     required TResult Function() empty,
     required TResult Function(Failure failure) error,
   }) {
-    return preview(previewList);
+    return preview(this.preview);
   }
 
   @override
@@ -610,13 +403,11 @@ class _$Preview implements Preview {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(WebViewController webViewController)? page,
-    TResult? Function(List<PreviewEntity> previewList)? preview,
-    TResult? Function()? internetError,
+    TResult? Function(PreviewEntity preview)? preview,
     TResult? Function()? empty,
     TResult? Function(Failure failure)? error,
   }) {
-    return preview?.call(previewList);
+    return preview?.call(this.preview);
   }
 
   @override
@@ -624,15 +415,13 @@ class _$Preview implements Preview {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(WebViewController webViewController)? page,
-    TResult Function(List<PreviewEntity> previewList)? preview,
-    TResult Function()? internetError,
+    TResult Function(PreviewEntity preview)? preview,
     TResult Function()? empty,
     TResult Function(Failure failure)? error,
     required TResult orElse(),
   }) {
     if (preview != null) {
-      return preview(previewList);
+      return preview(this.preview);
     }
     return orElse();
   }
@@ -642,9 +431,7 @@ class _$Preview implements Preview {
   TResult map<TResult extends Object?>({
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
-    required TResult Function(Page value) page,
     required TResult Function(Preview value) preview,
-    required TResult Function(Internet value) internetError,
     required TResult Function(Empty value) empty,
     required TResult Function(Error value) error,
   }) {
@@ -656,9 +443,7 @@ class _$Preview implements Preview {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
-    TResult? Function(Page value)? page,
     TResult? Function(Preview value)? preview,
-    TResult? Function(Internet value)? internetError,
     TResult? Function(Empty value)? empty,
     TResult? Function(Error value)? error,
   }) {
@@ -670,9 +455,7 @@ class _$Preview implements Preview {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
-    TResult Function(Page value)? page,
     TResult Function(Preview value)? preview,
-    TResult Function(Internet value)? internetError,
     TResult Function(Empty value)? empty,
     TResult Function(Error value)? error,
     required TResult orElse(),
@@ -684,145 +467,13 @@ class _$Preview implements Preview {
   }
 }
 
-abstract class Preview implements HomeState {
-  const factory Preview({required final List<PreviewEntity> previewList}) =
-      _$Preview;
+abstract class Preview implements CardState {
+  const factory Preview({required final PreviewEntity preview}) = _$Preview;
 
-  List<PreviewEntity> get previewList;
+  PreviewEntity get preview;
   @JsonKey(ignore: true)
   _$$PreviewCopyWith<_$Preview> get copyWith =>
       throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$InternetCopyWith<$Res> {
-  factory _$$InternetCopyWith(
-          _$Internet value, $Res Function(_$Internet) then) =
-      __$$InternetCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$InternetCopyWithImpl<$Res>
-    extends _$HomeStateCopyWithImpl<$Res, _$Internet>
-    implements _$$InternetCopyWith<$Res> {
-  __$$InternetCopyWithImpl(_$Internet _value, $Res Function(_$Internet) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$Internet implements Internet {
-  const _$Internet();
-
-  @override
-  String toString() {
-    return 'HomeState.internetError()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$Internet);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(WebViewController webViewController) page,
-    required TResult Function(List<PreviewEntity> previewList) preview,
-    required TResult Function() internetError,
-    required TResult Function() empty,
-    required TResult Function(Failure failure) error,
-  }) {
-    return internetError();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(WebViewController webViewController)? page,
-    TResult? Function(List<PreviewEntity> previewList)? preview,
-    TResult? Function()? internetError,
-    TResult? Function()? empty,
-    TResult? Function(Failure failure)? error,
-  }) {
-    return internetError?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(WebViewController webViewController)? page,
-    TResult Function(List<PreviewEntity> previewList)? preview,
-    TResult Function()? internetError,
-    TResult Function()? empty,
-    TResult Function(Failure failure)? error,
-    required TResult orElse(),
-  }) {
-    if (internetError != null) {
-      return internetError();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(Initial value) initial,
-    required TResult Function(Loading value) loading,
-    required TResult Function(Page value) page,
-    required TResult Function(Preview value) preview,
-    required TResult Function(Internet value) internetError,
-    required TResult Function(Empty value) empty,
-    required TResult Function(Error value) error,
-  }) {
-    return internetError(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Initial value)? initial,
-    TResult? Function(Loading value)? loading,
-    TResult? Function(Page value)? page,
-    TResult? Function(Preview value)? preview,
-    TResult? Function(Internet value)? internetError,
-    TResult? Function(Empty value)? empty,
-    TResult? Function(Error value)? error,
-  }) {
-    return internetError?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(Initial value)? initial,
-    TResult Function(Loading value)? loading,
-    TResult Function(Page value)? page,
-    TResult Function(Preview value)? preview,
-    TResult Function(Internet value)? internetError,
-    TResult Function(Empty value)? empty,
-    TResult Function(Error value)? error,
-    required TResult orElse(),
-  }) {
-    if (internetError != null) {
-      return internetError(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class Internet implements HomeState {
-  const factory Internet() = _$Internet;
 }
 
 /// @nodoc
@@ -832,7 +483,7 @@ abstract class _$$EmptyCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$EmptyCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res, _$Empty>
+class __$$EmptyCopyWithImpl<$Res> extends _$CardStateCopyWithImpl<$Res, _$Empty>
     implements _$$EmptyCopyWith<$Res> {
   __$$EmptyCopyWithImpl(_$Empty _value, $Res Function(_$Empty) _then)
       : super(_value, _then);
@@ -845,7 +496,7 @@ class _$Empty implements Empty {
 
   @override
   String toString() {
-    return 'HomeState.empty()';
+    return 'CardState.empty()';
   }
 
   @override
@@ -862,9 +513,7 @@ class _$Empty implements Empty {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(WebViewController webViewController) page,
-    required TResult Function(List<PreviewEntity> previewList) preview,
-    required TResult Function() internetError,
+    required TResult Function(PreviewEntity preview) preview,
     required TResult Function() empty,
     required TResult Function(Failure failure) error,
   }) {
@@ -876,9 +525,7 @@ class _$Empty implements Empty {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(WebViewController webViewController)? page,
-    TResult? Function(List<PreviewEntity> previewList)? preview,
-    TResult? Function()? internetError,
+    TResult? Function(PreviewEntity preview)? preview,
     TResult? Function()? empty,
     TResult? Function(Failure failure)? error,
   }) {
@@ -890,9 +537,7 @@ class _$Empty implements Empty {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(WebViewController webViewController)? page,
-    TResult Function(List<PreviewEntity> previewList)? preview,
-    TResult Function()? internetError,
+    TResult Function(PreviewEntity preview)? preview,
     TResult Function()? empty,
     TResult Function(Failure failure)? error,
     required TResult orElse(),
@@ -908,9 +553,7 @@ class _$Empty implements Empty {
   TResult map<TResult extends Object?>({
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
-    required TResult Function(Page value) page,
     required TResult Function(Preview value) preview,
-    required TResult Function(Internet value) internetError,
     required TResult Function(Empty value) empty,
     required TResult Function(Error value) error,
   }) {
@@ -922,9 +565,7 @@ class _$Empty implements Empty {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
-    TResult? Function(Page value)? page,
     TResult? Function(Preview value)? preview,
-    TResult? Function(Internet value)? internetError,
     TResult? Function(Empty value)? empty,
     TResult? Function(Error value)? error,
   }) {
@@ -936,9 +577,7 @@ class _$Empty implements Empty {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
-    TResult Function(Page value)? page,
     TResult Function(Preview value)? preview,
-    TResult Function(Internet value)? internetError,
     TResult Function(Empty value)? empty,
     TResult Function(Error value)? error,
     required TResult orElse(),
@@ -950,7 +589,7 @@ class _$Empty implements Empty {
   }
 }
 
-abstract class Empty implements HomeState {
+abstract class Empty implements CardState {
   const factory Empty() = _$Empty;
 }
 
@@ -963,7 +602,7 @@ abstract class _$$ErrorCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$ErrorCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res, _$Error>
+class __$$ErrorCopyWithImpl<$Res> extends _$CardStateCopyWithImpl<$Res, _$Error>
     implements _$$ErrorCopyWith<$Res> {
   __$$ErrorCopyWithImpl(_$Error _value, $Res Function(_$Error) _then)
       : super(_value, _then);
@@ -992,7 +631,7 @@ class _$Error implements Error {
 
   @override
   String toString() {
-    return 'HomeState.error(failure: $failure)';
+    return 'CardState.error(failure: $failure)';
   }
 
   @override
@@ -1017,9 +656,7 @@ class _$Error implements Error {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(WebViewController webViewController) page,
-    required TResult Function(List<PreviewEntity> previewList) preview,
-    required TResult Function() internetError,
+    required TResult Function(PreviewEntity preview) preview,
     required TResult Function() empty,
     required TResult Function(Failure failure) error,
   }) {
@@ -1031,9 +668,7 @@ class _$Error implements Error {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(WebViewController webViewController)? page,
-    TResult? Function(List<PreviewEntity> previewList)? preview,
-    TResult? Function()? internetError,
+    TResult? Function(PreviewEntity preview)? preview,
     TResult? Function()? empty,
     TResult? Function(Failure failure)? error,
   }) {
@@ -1045,9 +680,7 @@ class _$Error implements Error {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(WebViewController webViewController)? page,
-    TResult Function(List<PreviewEntity> previewList)? preview,
-    TResult Function()? internetError,
+    TResult Function(PreviewEntity preview)? preview,
     TResult Function()? empty,
     TResult Function(Failure failure)? error,
     required TResult orElse(),
@@ -1063,9 +696,7 @@ class _$Error implements Error {
   TResult map<TResult extends Object?>({
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
-    required TResult Function(Page value) page,
     required TResult Function(Preview value) preview,
-    required TResult Function(Internet value) internetError,
     required TResult Function(Empty value) empty,
     required TResult Function(Error value) error,
   }) {
@@ -1077,9 +708,7 @@ class _$Error implements Error {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
-    TResult? Function(Page value)? page,
     TResult? Function(Preview value)? preview,
-    TResult? Function(Internet value)? internetError,
     TResult? Function(Empty value)? empty,
     TResult? Function(Error value)? error,
   }) {
@@ -1091,9 +720,7 @@ class _$Error implements Error {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
-    TResult Function(Page value)? page,
     TResult Function(Preview value)? preview,
-    TResult Function(Internet value)? internetError,
     TResult Function(Empty value)? empty,
     TResult Function(Error value)? error,
     required TResult orElse(),
@@ -1105,7 +732,7 @@ class _$Error implements Error {
   }
 }
 
-abstract class Error implements HomeState {
+abstract class Error implements CardState {
   const factory Error(final Failure failure) = _$Error;
 
   Failure get failure;

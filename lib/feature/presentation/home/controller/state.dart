@@ -3,6 +3,8 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:test_work/core/error/failure.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
+import '../../../domain/entities/preview_entity.dart';
+
 part 'state.freezed.dart';
 
 @freezed
@@ -14,7 +16,7 @@ abstract class HomeState with _$HomeState {
 
   const factory HomeState.page({required WebViewController webViewController}) = Page;
 
-  const factory HomeState.preview() = Preview;
+  const factory HomeState.preview({required List<PreviewEntity> previewList}) = Preview;
 
   const factory HomeState.internetError() = Internet;
 

@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:test_work/feature/presentation/card/view/card_view.dart';
 import 'package:test_work/feature/presentation/home/view/home_page.dart';
+import 'package:get/get.dart';
+
+import 'app_routes.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -7,12 +11,31 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
       home: const HomePage(),
+      onUnknownRoute: (RouteSettings settings) {
+        return MaterialPageRoute(builder: (BuildContext context) {
+          return const HomePage();
+        });
+      },
+      getPages: [
+        GetPage(
+            name: Routes.HOME,
+            transition: Transition.fade,
+            transitionDuration: const Duration(milliseconds: 500),
+            page: () => const HomePage(),
+        ),
+        GetPage(
+            name: Routes.CARD,
+            transition: Transition.fade,
+            transitionDuration: const Duration(milliseconds: 500),
+            page: () => const CardPage(),
+        ),
+      ]
     );
   }
 }
