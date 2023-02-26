@@ -9,7 +9,6 @@ import 'package:test_work/feature/presentation/home/widgets/preview_list_widget.
 import 'package:test_work/servise_locator.dart';
 
 import '../controller/index.dart';
-import '../widgets/preview_widget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
