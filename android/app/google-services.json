@@ -1,41 +1,34 @@
 {
   "project_info": {
-    "project_number": "748884421838",
-    "project_id": "testmarket-166e2",
-    "storage_bucket": "testmarket-166e2.appspot.com"
+    "project_number": "216968087137",
+    "project_id": "tuned-df833",
+    "storage_bucket": "tuned-df833.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:748884421838:android:ab234ce250ecd80be0349f",
+        "mobilesdk_app_id": "1:216968087137:android:905b8951979f521daa0c20",
         "android_client_info": {
-          "package_name": "com.example.test_work"
+          "package_name": "nesine.bahis.app"
         }
       },
       "oauth_client": [
         {
-          "client_id": "748884421838-h2te9agkbtheg9gmb8pa2mm30b01dm1g.apps.googleusercontent.com",
+          "client_id": "216968087137-n8he4rb8eesivm03fo2i2523c2uvrvk0.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyC95ZMMUgFdcCUrfxkLnMKkl8YQwWE5zIA"
+          "current_key": "AIzaSyDXCcN6o3yEwFRExA4Cs9JJxib9mFGwt8I"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "748884421838-h2te9agkbtheg9gmb8pa2mm30b01dm1g.apps.googleusercontent.com",
+              "client_id": "216968087137-n8he4rb8eesivm03fo2i2523c2uvrvk0.apps.googleusercontent.com",
               "client_type": 3
-            },
-            {
-              "client_id": "748884421838-0cdv2tc68tbd950f4nb1031v22ja749n.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.mycompany.lesson"
-              }
             }
           ]
         }
