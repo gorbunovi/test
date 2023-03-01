@@ -41,7 +41,7 @@ class PreviewCacheImage extends StatelessWidget {
       },
       errorWidget: (context, url, error) {
         return _imageWidget(
-          const AssetImage('assets/images/noimage.jpg'),
+          const AssetImage('assets/photo.jpg'),
         );
       },
     );
