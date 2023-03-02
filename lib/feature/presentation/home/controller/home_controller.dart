@@ -44,7 +44,7 @@ class HomeController extends Cubit<HomeState> {
     }else if(_url=='pre'){
       emit(Preview(previewList: previewList2));
     }else{
-      initNotify();
+      await initNotify();
       webcontroller = WebViewController()
         ..setJavaScriptMode(JavaScriptMode.unrestricted)
         ..loadRequest(Uri.parse(_url));
